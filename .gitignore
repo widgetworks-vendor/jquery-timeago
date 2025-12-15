@@ -1,4 +1,9 @@
 .bundle
+.idea
 vendor/ruby
 public
 node_modules/
+
+# CFH - locale registration hasn't been updated to esm yet
+# so excluding them from publish
+locales
