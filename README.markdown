@@ -9,19 +9,23 @@ formatted dates and times embedded in your HTML (à la microformats).
 
 ## Usage
 
-First, load jQuery and the plugin:
+First, load jQuery:
 
 ```html
 <script src="jquery.min.js" type="text/javascript"></script>
-<script src="jquery.timeago.js" type="text/javascript"></script>
 ```
+
+The plugin is authored as an esm module so it must be `import`ed.
 
 Now, let's attach it to your timestamps on DOM ready - put this in the head
 section:
 
 ```html
-<script type="text/javascript">
-   jQuery(document).ready(function() {
+<script type="module">
+   jQuery(function($) {
+     import registerTimeago from '@wiwo/timeago';
+     registerTimeago($);
+     
      $("time.timeago").timeago();
    });
 </script>

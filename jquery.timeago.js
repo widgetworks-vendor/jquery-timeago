@@ -14,7 +14,20 @@
  * Copyright (c) 2008-2019, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
  */
 
-export default function register($) {
+/**
+ * Register `timeago` only once by default.
+ * Avoids clobbering any custom config with the defaults.
+ */
+export function registerOnce($){
+  if (!$.timeago){
+    register($);
+  }
+}
+
+/**
+ * Invoke this function to register or re-register (and overwrite) timeago.
+ */
+export function register($) {
   $.timeago = function(timestamp) {
     if (timestamp instanceof Date) {
       return inWords(timestamp);
@@ -215,8 +228,6 @@ export default function register($) {
   function distance(date) {
     return (new Date().getTime() - date.getTime());
   }
-
-  // fix for IE6 suckage
-  document.createElement("abbr");
-  document.createElement("time");
 }
+
+export default registerOnce;
