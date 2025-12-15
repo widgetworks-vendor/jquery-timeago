@@ -14,17 +14,7 @@
  * Copyright (c) 2008-2019, Ryan McGeary (ryan -[at]- mcgeary [*dot*] org)
  */
 
-(function (factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD. Register as an anonymous module.
-    define(['jquery'], factory);
-  } else if (typeof module === 'object' && typeof module.exports === 'object') {
-    factory(require('jquery'));
-  } else {
-    // Browser globals
-    factory(jQuery);
-  }
-}(function ($) {
+export default function register($) {
   $.timeago = function(timestamp) {
     if (timestamp instanceof Date) {
       return inWords(timestamp);
@@ -229,4 +219,4 @@
   // fix for IE6 suckage
   document.createElement("abbr");
   document.createElement("time");
-}));
+}

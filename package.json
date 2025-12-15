@@ -1,5 +1,5 @@
 {
-  "name": "timeago",
+  "name": "@wiwo/timeago",
   "version": "1.6.7",
   "title": "jQuery Timeago",
   "author": {
@@ -13,8 +13,12 @@
       "url": "http://opensource.org/licenses/mit-license.php"
     }
   ],
-  "dependencies": {
-    "jquery": ">=1.5.0 <4.0"
+  "type": "module",
+  "peerDependencies": {
+    "jquery": "~3.0.0"
+  },
+  "devDependencies": {
+    "jquery": "~3.7.0"
   },
   "description": "jQuery plugin that makes it easy to support automatically updating fuzzy timestamps (e.g. \"4 minutes ago\" or \"about 1 day ago\").",
   "keywords": [
@@ -27,11 +31,5 @@
   "download": "http://timeago.yarp.com/jquery.timeago.js",
   "bugs": "https://github.com/rmm5t/jquery-timeago/issues",
   "maintainers": [],
-  "spm": {
-    "main": "jquery.timeago.js"
-  },
-  "browser": {
-    "timeago": "./node_modules/timeago/jquery.timeago.js"
-  },
   "main": "jquery.timeago.js"
 }
